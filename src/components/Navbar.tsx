@@ -5,13 +5,13 @@ const Navbar: React.FC = () => {
   return (
     <Flex
       bg="white"
-      height="100px"
+      height="80px"
       padding="6px 12px"
       justify={{ md: "space-between" }}
     >
       <Flex
         align="center"
-        width="200px"
+        width="150px"
         cursor="pointer"
         padding={1}
         onClick={() => {}}

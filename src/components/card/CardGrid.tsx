@@ -1,7 +1,7 @@
 import React from "react";
 import { SimpleGrid } from "@chakra-ui/react";
-import CardComponent from "./CardComponent";
 import { CardData } from "../../types/CardData";
+import CardComponent from "./CardComponent";
 
 interface CardGridProps {
   cards: CardData[];

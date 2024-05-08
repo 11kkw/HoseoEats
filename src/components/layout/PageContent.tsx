@@ -14,9 +14,10 @@ const PageContentLayout: React.FC<PageContentLayoutProps> = ({
       <Flex width="100%" justify="center" maxWidth={maxWidth || "1000px"}>
         <Flex
           direction="column"
-          width={{ base: "80%", md: "80%" }}
-          mr={{ base: 0, md: 6 }}
-          border="1px solid red"
+          width={{ base: "100%", md: "100%" }}
+          bg="white"
+          padding={10}
+          borderRadius={10}
         >
           {children}
         </Flex>

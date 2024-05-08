@@ -2,47 +2,67 @@ import React from "react";
 import {
   Image,
   Card,
-  CardBody,
-  CardFooter,
+  Box,
   Heading,
-  CardHeader,
   Flex,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { CardData } from "../../types/CardData";
 
 const CardComponent: React.FC<CardData> = ({ image, title, description }) => {
+  const bgColor = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("gray.700", "white");
+
   return (
     <Card
-      transition="transform 0.2s"
+      transition="all 0.3s ease"
       _hover={{
         transform: "scale(1.05)",
-        boxShadow: "2xl",
+        boxShadow: "dark-lg",
       }}
-      boxShadow="lg"
-      maxWidth={{ sm: "340px", md: "360px", lg: "400px" }}
+      boxShadow="2xl"
+      bg={bgColor}
+      borderRadius={10}
+      overflow="hidden"
+      maxWidth="100%"
       width="100%"
+      display="flex"
+      flexDirection="column"
       m="auto"
+      height="250px"
     >
-      <CardHeader>
-        <Flex justifyContent="center" width="100%">
-          <Heading size="md">{title}</Heading>
-        </Flex>
-      </CardHeader>
+      <Image
+        src={image}
+        alt={title}
+        objectFit="cover"
+        width="100%"
+        height="150px"
+        borderTopRadius="lg"
+      />
 
-      <CardBody>
-        <Flex justifyContent="center" width="100%">
-          <Image src={image} width="100%" maxHeight="150px" objectFit="cover" />
-        </Flex>
-      </CardBody>
-
-      <CardFooter>
+      <Box
+        p={2}
+        flex={1}
+        display="flex"
+        flexDirection="column"
+        justifyContent="space-between"
+      >
         <Flex width="100%" justifyContent="center">
-          <Text isTruncated maxWidth="300px" border="1px solid red">
-            {description}
-          </Text>
+          <Heading size="lg" mb={2} textAlign="center">
+            {title}
+          </Heading>
         </Flex>
-      </CardFooter>
+        <Text
+          fontSize="md"
+          color={textColor}
+          noOfLines={2} // 적어도 두 줄은 표시
+          overflow="hidden"
+          textOverflow="ellipsis"
+        >
+          {description}
+        </Text>
+      </Box>
     </Card>
   );
 };
