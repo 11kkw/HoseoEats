@@ -9,7 +9,7 @@ interface CardGridProps {
 
 const CardGrid: React.FC<CardGridProps> = ({ cards }) => {
   return (
-    <SimpleGrid columns={{ sm: 2, md: 3, lg: 4 }} spacing="40px">
+    <SimpleGrid columns={{ sm: 2, md: 3 }} spacing="35px">
       {cards.map((card, index) => (
         <CardComponent key={index} {...card} />
       ))}

@@ -1,31 +1,19 @@
 import React from "react";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Text, Flex, Image } from "@chakra-ui/react";
 
 const Navbar: React.FC = () => {
   return (
     <Flex
-      bg="white"
-      height="80px"
+      bg="#9B9B9B"
+      height="130px"
       padding="6px 12px"
       justify={{ md: "space-between" }}
     >
-      <Flex
-        align="center"
-        width="150px"
-        cursor="pointer"
-        padding={1}
-        onClick={() => {}}
-      >
+      <Flex align="center" cursor="pointer" padding={1} onClick={() => {}}>
         <Image src="/mainlogo.png" height="100%" alt="main logo" />
-        <Box
-          fontSize="2xl"
-          fontWeight="bold"
-          color="teal.600"
-          textShadow="1px 1px 2px gray"
-          ml="2"
-        >
+        <Text fontSize="45px" lineHeight="49.5px" fontWeight="400" ml="2">
           호먹
-        </Box>
+        </Text>
       </Flex>
     </Flex>
   );
