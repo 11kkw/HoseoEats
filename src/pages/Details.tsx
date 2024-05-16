@@ -4,8 +4,9 @@ import PageContent from "../components/layout/PageContent";
 import DetailCard from "../components/card/detail/DetailCard";
 import Papa, { ParseResult } from "papaparse";
 import { DetailCardData } from "../types/CardData";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, Spacer } from "@chakra-ui/react";
 import MenuCard from "../components/card/detail/MenuCard";
+import MapCard from "../components/card/detail/MapCard";
 
 type DetailProps = {};
 
@@ -39,14 +40,20 @@ const Detail: React.FC<DetailProps> = () => {
 
     fetchData();
   }, [title]);
-
+  if (selectedCards.length === 0) {
+    return <div>Loading...</div>;
+  }
   return (
     <>
       <PageContent>
-        <Box>
+        <Box width="100%">
           <DetailCard selectedCards={selectedCards} />
-          <Flex mt={20}>
+          <Flex mt={20} width="1311px">
             <MenuCard selectedCards={selectedCards} />
+            <Spacer />
+            <Box>
+              <MapCard default_card={selectedCards[0]} />
+            </Box>
           </Flex>
         </Box>
       </PageContent>
