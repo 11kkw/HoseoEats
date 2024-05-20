@@ -12,6 +12,7 @@ const useFetchCsvData = (csvUrl: string) => {
       try {
         const response = await fetch(csvUrl);
         const csvText = await response.text();
+        console.log(csvText);
         Papa.parse(csvText, {
           header: true,
           complete: (result: ParseResult<any>) => {

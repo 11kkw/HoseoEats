@@ -101,7 +101,12 @@ const DetailCard: React.FC<DetailCardProps> = ({ selectedCards }) => {
           <Box>
             <Flex>
               <Box>
-                <Text fontWeight={700} fontSize="40px" lineHeight="77px">
+                <Text
+                  fontFamily="KOHIBaeum"
+                  fontWeight={700}
+                  fontSize="40px"
+                  lineHeight="77px"
+                >
                   {defaultCard.title}
                 </Text>
                 <Flex mb={2}>
@@ -124,8 +129,7 @@ const DetailCard: React.FC<DetailCardProps> = ({ selectedCards }) => {
                   fontWeight="700"
                   color="#666666"
                 >
-                  {"test"}
-                  {defaultCard.dscription}
+                  {defaultCard.description}
                 </Text>
               </Flex>
               <Spacer />

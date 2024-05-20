@@ -1,5 +1,4 @@
-import { extendTheme, theme as base } from "@chakra-ui/react";
-import { Button } from "./button";
+import { extendTheme } from "@chakra-ui/react";
 
 export const theme = extendTheme({
   colors: {
@@ -7,16 +6,16 @@ export const theme = extendTheme({
       100: "#FF3C00",
     },
   },
-  fonts: {},
+  fonts: {
+    KOHINanum: "KOHINanum, sans-serif",
+    KOHIBaeum: "KOHIBaeum, sans-serif",
+  },
   styles: {
-    global: () => ({
+    global: {
       body: {
         bg: "white",
-        fontFamily: "KOHBaeum, sans-serif", // 전역 폰트 설정
+        fontFamily: "KOHINanum, sans-serif",
       },
-    }),
-  },
-  components: {
-    Button,
+    },
   },
 });

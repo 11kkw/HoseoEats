@@ -33,11 +33,9 @@ const Detail: React.FC<DetailProps> = () => {
           }));
           const matchingCards = data.filter((card) => card.title === title);
           setSelectedCards(matchingCards);
-          console.log(matchingCards);
         },
       });
     };
-
     fetchData();
   }, [title]);
   if (selectedCards.length === 0) {

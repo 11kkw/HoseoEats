@@ -1,8 +1,13 @@
-// src/components/FoodCategoryBar.tsx
 import React from "react";
 import { Flex, Box, Text, Image } from "@chakra-ui/react";
 
-const FoodCategoryBar: React.FC = () => {
+type FoodCategoryBarProps = {
+  onCategorySelect: (category: string) => void;
+};
+
+const FoodCategoryBar: React.FC<FoodCategoryBarProps> = ({
+  onCategorySelect,
+}) => {
   const categories = [
     { name: "한식", icon: "/images/korean.png" },
     { name: "일식", icon: "/images/japanese.png" },
@@ -25,7 +30,7 @@ const FoodCategoryBar: React.FC = () => {
       >
         <Box mx={10} width="230px" height="100px" textAlign="left">
           <Text
-            fontFamily="KOHBaeum"
+            fontFamily="KOHIBaeum"
             fontSize="45px"
             fontWeight="400"
             lineHeight="49.5px"
@@ -34,7 +39,7 @@ const FoodCategoryBar: React.FC = () => {
             음식종류
           </Text>
           <Text
-            fontFamily="KOHBaeum"
+            fontFamily="KOHIBaeum"
             fontSize="45px"
             fontWeight="400"
             lineHeight="49.5px"
@@ -43,7 +48,7 @@ const FoodCategoryBar: React.FC = () => {
             맛집보기
           </Text>
           <Text
-            fontFamily="KOHBaeum"
+            fontFamily="KOHIBaeum"
             fontSize="20px"
             fontWeight="400"
             lineHeight="22px"
@@ -54,15 +59,24 @@ const FoodCategoryBar: React.FC = () => {
         </Box>
         <Flex justify="space-around" width="100%">
           {categories.map((category, index) => (
-            <Box key={index} textAlign="center">
+            <Box
+              key={index}
+              textAlign="center"
+              onClick={() => onCategorySelect(category.name)}
+              transition="all 0.3s ease"
+              _hover={{
+                transform: "scale(1.05)",
+              }}
+            >
               <Image
                 src={category.icon}
                 alt={category.name}
                 boxSize="116px"
                 mb={4}
+                cursor="pointer"
               />
               <Text
-                fontFamily="KOHBaeum"
+                fontFamily="KOHIBaeum"
                 fontSize="30px"
                 fontWeight="400"
                 lineHeight="33px"

@@ -20,10 +20,16 @@ const MenuCard: React.FC<MenuCardProps> = ({ selectedCards }) => {
       borderRadius={10}
       width="775px"
       py={10}
-      px={5}
+      px={10}
       direction="column"
     >
-      <Text fontSize="45px" fontWeight="400" lineHeight="49.5px" mb={5}>
+      <Text
+        fontFamily="KOHIBaeum"
+        fontSize="45px"
+        fontWeight="400"
+        lineHeight="49.5px"
+        my={5}
+      >
         {"대표메뉴"}
       </Text>
       <Box flex="1">

@@ -12,15 +12,15 @@ function App() {
     <ChakraProvider theme={theme}>
       <CSSReset />
       <Fonts />
-      <Layout>
-        <Router>
+      <Router>
+        <Layout>
           <Routes>
             <Route path="/details/:title" Component={Details} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<h1>Not Found</h1>} />
           </Routes>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     </ChakraProvider>
   );
 }

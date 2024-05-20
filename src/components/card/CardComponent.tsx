@@ -63,7 +63,7 @@ const CardComponent: React.FC<CardData> = ({
       >
         <Box>
           <Heading
-            fontFamily="KOHBaeum, sans-serif"
+            fontFamily="KOHIBaeum, sans-serif"
             fontWeight="400"
             fontSize="35px"
             lineHeight="38.5px"
@@ -73,7 +73,13 @@ const CardComponent: React.FC<CardData> = ({
           </Heading>
           <Flex alignItems="center" mb={2}>
             <Icon as={FaStar} color="yellow.400" mr={1} fontSize="28px" />
-            <Text fontSize="23px" fontWeight="400" lineHeight={"25.3px"}>
+            <Text
+              fontSize="23px"
+              fontWeight="400"
+              lineHeight={"25.3px"}
+              color="#666666"
+              fontFamily="KOHIBaeum"
+            >
               {score}
             </Text>
             <Flex flexWrap="wrap">
@@ -90,19 +96,18 @@ const CardComponent: React.FC<CardData> = ({
               ))}
             </Flex>
           </Flex>
-          <Text
-            fontFamily="KOHBaeum, sans-serif"
-            fontSize="16px"
-            lineHeight="1.5"
-            mb={2}
-            color="gray.600"
-          >
+          <Text fontSize="23px" lineHeight="25.3px" mb={2} color="#666666">
             {description}
           </Text>
         </Box>
         <Flex alignItems="center" mt={4} color="gray.500">
           <Icon as={FaMapMarkerAlt} mr={1} color="red" />
-          <Text fontFamily="KOHBaeum, sans-serif" fontSize="14px">
+          <Text
+            fontFamily="KOHINanum"
+            fontSize="17px"
+            lineHeight="18.7px"
+            fontWeight={700}
+          >
             {location}
           </Text>
         </Flex>

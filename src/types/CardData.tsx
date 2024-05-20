@@ -13,7 +13,7 @@ export type DetailCardData = {
   foodtype: string[];
   location: string;
   score: number;
-  dscription?: string;
+  description?: string;
   menu_title: string;
   cost: number;
 };
