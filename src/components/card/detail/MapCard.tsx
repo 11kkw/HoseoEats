@@ -11,7 +11,7 @@ const MapCard: React.FC<MapCardProps> = ({ default_card }) => {
   useEffect(() => {
     const loadNaverMap = async (x: number, y: number) => {
       const script = document.createElement("script");
-      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NAVER_CLIENT_ID}`;
+      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=siu85jyeb7`;
       script.async = true;
       script.onload = () => {
         if (window.naver) {
