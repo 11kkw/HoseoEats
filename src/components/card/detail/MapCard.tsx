@@ -3,9 +3,6 @@ import { Box, Button } from "@chakra-ui/react";
 import axios from "axios";
 import { DetailCardData } from "../../../types/CardData";
 
-const clientId = process.env.REACT_APP_NAVER_CLIENT_ID;
-const clientSecret = process.env.REACT_APP_NAVER_CLIENT_SECRET;
-
 type MapCardProps = {
   default_card: DetailCardData;
 };
@@ -14,7 +11,7 @@ const MapCard: React.FC<MapCardProps> = ({ default_card }) => {
   useEffect(() => {
     const loadNaverMap = async (x: number, y: number) => {
       const script = document.createElement("script");
-      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${clientId}`;
+      script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.REACT_APP_NAVER_MAP_CLIENT_ID}`;
       script.async = true;
       script.onload = () => {
         if (window.naver) {
@@ -40,12 +37,8 @@ const MapCard: React.FC<MapCardProps> = ({ default_card }) => {
 
     const fetchGeocode = async () => {
       try {
-        const response = await axios.get("/map-geocode/v2/geocode", {
+        const response = await axios.get("/api/geocode", {
           params: { query: default_card.location },
-          headers: {
-            "X-NCP-APIGW-API-KEY-ID": clientId,
-            "X-NCP-APIGW-API-KEY": clientSecret,
-          },
         });
 
         if (response.data && response.data.addresses.length > 0) {

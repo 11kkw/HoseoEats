@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/geocode.js": {
+      "runtime": "nodejs14.x"
+    }
+  }
+}
