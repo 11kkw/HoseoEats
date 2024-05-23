@@ -9,6 +9,8 @@ type MapCardProps = {
 
 const MapCard: React.FC<MapCardProps> = ({ default_card }) => {
   useEffect(() => {
+    console.log("NAVER_CLIENT_ID:", process.env.NAVER_CLIENT_ID);
+    console.log("NAVER_CLIENT_SECRET:", process.env.NAVER_CLIENT_SECRET);
     const loadNaverMap = async (x: number, y: number) => {
       const script = document.createElement("script");
       script.src = `https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.REACT_APP_NAVER_MAP_CLIENT_ID}`;
