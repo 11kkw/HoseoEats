@@ -40,6 +40,7 @@ const MapCard: React.FC<MapCardProps> = ({ default_card }) => {
         const response = await axios.get("/api/geocode", {
           params: { query: default_card.location },
         });
+        console.log(response);
 
         if (response.data && response.data.addresses.length > 0) {
           const { x, y } = response.data.addresses[0];
