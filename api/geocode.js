@@ -4,7 +4,8 @@ const geocode = async (req, res) => {
   const apiUrl = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode";
   const query = req.query.query || "default";
 
-  console.log("testing");
+  // 환경 변수 및 디버깅 로그 출력
+  console.log("Testing environment variables");
   console.log("NAVER_CLIENT_ID:", process.env.NAVER_CLIENT_ID);
   console.log("NAVER_CLIENT_SECRET:", process.env.NAVER_CLIENT_SECRET);
 
