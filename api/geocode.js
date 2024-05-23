@@ -20,6 +20,7 @@ const geocode = async (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     res.setHeader("Pragma", "no-cache");
     res.setHeader("Expires", "0");
+
     res.status(200).json(response.data);
   } catch (error) {
     console.error("Geocode API error:", error.message);
