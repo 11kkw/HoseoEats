@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 const geocode = async (req, res) => {
   const apiUrl = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode";
@@ -31,4 +31,4 @@ const geocode = async (req, res) => {
   }
 };
 
-export default geocode;
+module.exports = geocode;
