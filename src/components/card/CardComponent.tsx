@@ -44,6 +44,7 @@ const CardComponent: React.FC<CardData> = ({
       height="510px"
       cursor="pointer"
       onClick={handleCardClick}
+      overflow={"hidden"}
     >
       <Image
         src={image || "/images/quest.png"}
